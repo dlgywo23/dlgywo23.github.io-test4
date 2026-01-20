@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next-Gen Tech Education Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for Tech Trends -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1><i class="fas fa-microchip"></i> Next-Gen Tech Portal</h1>
+        <div style="font-size: 0.9rem; color: #666;">기술교육학 마스터 클래스</div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="sidebar-title">Tech Fields</div>
+        <div class="nav-item active" data-target="mfg" onclick="switchTab('mfg')">
+            <i class="fas fa-industry"></i> 제조기술 (Manufacturing)
+        </div>
+        <div class="nav-item" data-target="const" onclick="switchTab('const')">
+            <i class="fas fa-hard-hat"></i> 건설기술 (Construction)
+        </div>
+        <div class="nav-item" data-target="trans" onclick="switchTab('trans')">
+            <i class="fas fa-plane"></i> 수송기술 (Transportation)
+        </div>
+        <div class="nav-item" data-target="comm" onclick="switchTab('comm')">
+            <i class="fas fa-wifi"></i> 통신기술 (Communication)
+        </div>
+        <div class="nav-item" data-target="bio" onclick="switchTab('bio')">
+            <i class="fas fa-dna"></i> 생물기술 (Bio-tech)
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+        <!-- SECTION 1: Manufacturing -->
+        <section id="mfg" class="content-section active">
+            <div class="section-header">
+                <h2 class="section-title" style="color: var(--tech-mfg)">Manufacturing Technology</h2>
+                <p class="section-desc">재료를 가공하여 유용한 제품을 만드는 기술</p>
+            </div>
+
+            <!-- System Model -->
+            <div class="system-model">
+                <div class="model-step">
+                    <div class="model-box">Input</div>
+                    <small>재료, 설계도, 에너지</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="model-step">
+                    <div class="model-box">Process</div>
+                    <small>가공, 조립, 처리</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="model-step">
+                    <div class="model-box">Output</div>
+                    <small>완제품 (자동차, 스마트폰)</small>
+                </div>
+                <div class="feedback-loop"></div>
+                <div class="feedback-label">Feedback (평가 및 개선)</div>
+            </div>
+
+            <div class="learning-card">
+                <div class="card-header"><i class="fas fa-video"></i> 실습 및 원리</div>
+                <p>카프라 블록을 활용한 구조물 제작과 스테인 도색 실습입니다.</p>
+                <div class="formula-box">기어비 공식: i = Z₂/Z₁ = D₂/D₁</div>
+                <p>기계 요소의 핵심인 기어는 회전 속도와 힘을 조절합니다.</p>
+                <a href="https://youtu.be/t0yI4BjVVUA" target="_blank"
+                    style="color: var(--tech-mfg); font-weight:bold;">📺 실습 영상 보러가기</a>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Construction -->
+        <section id="const" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title" style="color: var(--tech-const)">Construction Technology</h2>
+                <p class="section-desc">쾌적하고 안전한 구조물을 만드는 기술</p>
+            </div>
+            <!-- System Model (Reusable structure) -->
+            <div class="system-model">
+                <div class="model-step">
+                    <div class="model-box">Input</div><small>자본, 부지, 인력</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="model-step">
+                    <div class="model-box">Process</div><small>기획, 설계, 시공</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="model-step">
+                    <div class="model-box">Output</div><small>건축물, 토목 구조물</small>
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="card-header"><i class="fas fa-building"></i> 심화 학습</div>
+                <p><span class="glossary-term" data-tooltip="삼각형 단위로 뼈대를 짜서 하중을 지탱하는 구조">트러스 구조(Truss)</span>의 원리와
+                    <span class="glossary-term" data-tooltip="공장에서 미리 부품을 만들어 현장에서 조립하는 건축 방식">모듈러 건축</span>,
+                    그리고 <span class="glossary-term"
+                        data-tooltip="Building Information Modeling: 3D 가상 모델링 기술">BIM</span> 기술을 통해 스마트 시티를 구현합니다.
+                </p>
+                <a href="https://youtu.be/xG9aN7_CbX4" target="_blank"
+                    style="color: var(--tech-const); font-weight:bold;">📺 종이 기둥 실험 영상</a>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Transportation -->
+        <section id="trans" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title" style="color: var(--tech-trans)">Transportation Technology</h2>
+                <p class="section-desc">사람과 물자를 효율적으로 이동시키는 기술</p>
+            </div>
+            <div class="system-model">
+                <div class="model-step">
+                    <div class="model-box">Input</div><small>연료, 승객, 화물</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="model-step">
+                    <div class="model-box">Process</div><small>이동, 운송, 제어</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="model-step">
+                    <div class="model-box">Output</div><small>목적지 도착</small>
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="card-header"><i class="fas fa-chart-line"></i> Sustainable Transport Trends</div>
+                <p>290여 개 기업 보고서 기반 기술 트렌드 분석</p>
+                <div style="height: 300px;">
+                    <canvas id="transChart"></canvas>
+                </div>
+            </div>
+            <div class="learning-card">
+                <p>에그카 프로젝트를 통해 충격 흡수 구조를 배우고, 미래의 <span class="glossary-term"
+                        data-tooltip="Urban Air Mobility: 도심 항공 이동수단">UAM</span>을 알아봅니다.</p>
+                <a href="https://youtu.be/c0bfmj6pRNA" target="_blank"
+                    style="color: var(--tech-trans); font-weight:bold;">📺 에그카 영상 보러가기</a>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Communication -->
+        <section id="comm" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title" style="color: var(--tech-comm)">Communication Technology</h2>
+                <p class="section-desc">정보를 송수신하고 공유하는 기술</p>
+            </div>
+            <div class="system-model">
+                <div class="model-step">
+                    <div class="model-box">Source</div><small>송신자, 정보</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="model-step">
+                    <div class="model-box">Channel</div><small>매체, 전송, 변환</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="model-step">
+                    <div class="model-box">Receiver</div><small>수신자, 해석</small>
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="card-header"><i class="fas fa-network-wired"></i> 네트워크 기초</div>
+                <p><span class="glossary-term" data-tooltip="국제표준화기구에서 개발한 7계층 통신 모델">OSI 7 Layer</span>와 프로토콜을 이해합니다.
+                </p>
+                <a href="https://youtu.be/_gTVdQeCZw0" target="_blank"
+                    style="color: var(--tech-comm); font-weight:bold;">📺 NFC 실습 영상</a>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Bio-tech -->
+        <section id="bio" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title" style="color: var(--tech-bio)">Bio-Technology</h2>
+                <p class="section-desc">생명 현상을 이용하여 인간에게 유용한 것을 만드는 기술</p>
+            </div>
+            <div class="system-model">
+                <div class="model-step">
+                    <div class="model-box">Input</div><small>미생물, 종자, 세포</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="model-step">
+                    <div class="model-box">Process</div><small>배양, 조작, 합성</small>
+                </div>
+                <div class="arrow">→</div>
+                <div class="model-step">
+                    <div class="model-box">Output</div><small>의약품, 식품, 품종</small>
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="card-header"><i class="fas fa-seedling"></i> 생명 윤리와 기술</div>
+                <p><span class="glossary-term" data-tooltip="질소 비료를 대량 생산하여 식량난 해결에 기여한 방법">하버-보슈법</span>부터 유전공학의 윤리적
+                    쟁점까지.</p>
+                <a href="https://youtu.be/RrpqdPiCRm4" target="_blank"
+                    style="color: var(--tech-bio); font-weight:bold;">📺 생명 기술 발달사 영상</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Right Panel: ESG & Quiz -->
+    <aside class="right-panel">
+
+        <!-- ESG Data Center -->
+        <div class="panel-section">
+            <h3><i class="fas fa-leaf" style="color:green;"></i> ESG Data Center</h3>
+            <div id="esgContainer">
+                <p style="color:#888; font-size:0.9rem;">기술 분야를 선택하면 관련 기업의 ESG 데이터가 표시됩니다.</p>
+            </div>
+        </div>
+
+        <!-- Interactive Quiz -->
+        <div class="panel-section">
+            <h3><i class="fas fa-pencil-alt"></i> Formative Quiz</h3>
+            <div class="quiz-container">
+                <div class="quiz-question" id="quizQuestion">문제를 로딩 중...</div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <button id="nextBtn" style="display:none; margin-top:10px; width:100%; padding:0.5rem;">다음 문제</button>
+            </div>
+        </div>
+
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
